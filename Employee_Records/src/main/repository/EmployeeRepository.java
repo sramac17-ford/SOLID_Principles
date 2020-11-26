@@ -3,7 +3,6 @@ package main.repository;
 import main.employees.Employee;
 import main.employees.Intern;
 import main.employees.PermanentEmployee;
-import main.reports.ContractGenerator;
 
 import java.util.ArrayList;
 
@@ -24,27 +23,12 @@ public class EmployeeRepository {
         return employeeList;
     }
 
-    public void addEmployee(Employee employee) {
-        try {
+    public void addEmployee(Employee employee) throws NullPointerException {
+        if (employee != null) {
             employeeList.add(employee);
-            issueContract(employee.getFullName());
-            System.out.println("Employee added successfully");
-        } catch (NullPointerException exception) {
-            System.out.println("Employee could not be added since null value was passed");
+        } else {
+            throw new NullPointerException("Employee cannot be null");
         }
-
-    }
-
-    private void issueContract(String fullName) {
-        StringBuilder contractBuilder = new StringBuilder();
-        contractBuilder.append("#################################Contract for ").append(fullName).append("#################################");
-        contractBuilder.append(System.lineSeparator());
-        contractBuilder.append("This is a legal contract referring to the employment between the employee").append(fullName).append(" and Ford Motor Company ............");
-        contractBuilder.append(System.lineSeparator());
-        ContractGenerator contractGenerator = new ContractGenerator(contractBuilder.toString());
-        System.out.println(contractGenerator.generateTextDocument());
-        System.out.println(contractGenerator.generateJsonFile());
-        System.out.println(contractGenerator.generatePDF());
     }
 
 }
