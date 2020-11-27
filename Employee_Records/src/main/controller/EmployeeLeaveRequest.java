@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class EmployeeLeaveRequest {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         EmployeeRepository repository = new EmployeeRepository();
 

@@ -30,7 +30,7 @@ public abstract class Employee {
         this.workingHoursPerWeek = hours;
     }
 
-    public abstract void applyForLeave(int days);
+    public abstract void applyForLeave(int days) throws Exception;
 
     public int getWorkingHoursPerWeek() {
         return workingHoursPerWeek;
