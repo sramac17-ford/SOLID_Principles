@@ -1,8 +1,6 @@
 package main.repository;
 
 import main.employees.Employee;
-import main.employees.Intern;
-import main.employees.PermanentEmployee;
 import main.reports.ContractGenerator;
 
 import java.util.ArrayList;
@@ -12,12 +10,12 @@ public class EmployeeRepository {
     private static final ArrayList<Employee> employeeList = new ArrayList<>();
 
     public EmployeeRepository() {
-        employeeList.add(new PermanentEmployee("John", "Doe", 75000));
-        employeeList.add(new PermanentEmployee("Jason", "Bourne", 95000));
-        employeeList.add(new PermanentEmployee("Xavier", "Abraham", 65000));
+        employeeList.add(new Employee("John", "Doe", 75000, true));
+        employeeList.add(new Employee("Jason", "Bourne", 95000, true));
+        employeeList.add(new Employee("Xavier", "Abraham", 65000, true));
 
-        employeeList.add(new Intern("Rebecca", "Johnson", 45000));
-        employeeList.add(new Intern("Michael", "Richards", 40000));
+        employeeList.add(new Employee("Rebecca", "Johnson", 45000, false));
+        employeeList.add(new Employee("Michael", "Richards", 40000, false));
     }
 
     public ArrayList<Employee> getEmployees() {

@@ -1,6 +1,6 @@
 package main.employees;
 
-public abstract class Employee {
+public class Employee {
 
     private static final String EMAIL_DOMAIN = "@ford.com";
 
@@ -8,10 +8,12 @@ public abstract class Employee {
     private final String lastName;
     private int fixedPay;
     private int workingHoursPerWeek;
+    private boolean isFullTimer;
 
-    public Employee(String firstName, String lastName, int fixedPay) {
+    public Employee(String firstName, String lastName, int fixedPay, boolean isFullTimer) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.isFullTimer = isFullTimer;
         setMonthlyIncome(fixedPay);
     }
 
@@ -30,7 +32,13 @@ public abstract class Employee {
         this.workingHoursPerWeek = hours;
     }
 
-    abstract public void applyForLeave(int days);
+    public void applyForLeave(int days) {
+        if(isFullTimer) {
+            System.out.println("Total 10 Leaves for Interns. Request approved");
+        } else {
+            System.out.println("Total 24 Leaves for Permanent Employees. Request approved");
+        }
+    }
 
     public int getWorkingHoursPerWeek() {
         return workingHoursPerWeek;
@@ -42,5 +50,13 @@ public abstract class Employee {
 
     public int getFixedPay() {
         return fixedPay;
+    }
+
+    public boolean isFullTimer() {
+        return isFullTimer;
+    }
+
+    public void setFullTimer(boolean fullTimer) {
+        isFullTimer = fullTimer;
     }
 }

@@ -1,7 +1,6 @@
 package main.controller;
 
 import main.employees.Employee;
-import main.employees.PermanentEmployee;
 import main.repository.EmployeeRepository;
 
 public class SaveEmployee {
@@ -9,13 +8,13 @@ public class SaveEmployee {
     public static void main(String[] arguments) {
         EmployeeRepository employeeRepository = new EmployeeRepository();
 
-        Employee newEmployee = new PermanentEmployee("Jacob", "Elias", 125000);
+        Employee newEmployee = new Employee("Jacob", "Elias", 125000, true);
         employeeRepository.addEmployee(newEmployee);
-        newEmployee = new PermanentEmployee("Marin", "Rose", 90000);
+        newEmployee = new Employee("Marin", "Rose", 90000, true);
         employeeRepository.addEmployee(newEmployee);
-        newEmployee = new PermanentEmployee("Charlie", "Owen", 55000);
+        newEmployee = new Employee("Charlie", "Owen", 55000, true);
         employeeRepository.addEmployee(newEmployee);
-        newEmployee = new PermanentEmployee("Amy", "Deck", 155000);
+        newEmployee = new Employee("Amy", "Deck", 155000, true);
         employeeRepository.addEmployee(newEmployee);
     }
 }

@@ -1,7 +1,6 @@
 package main.deductibles;
 
 import main.employees.Employee;
-import main.employees.PermanentEmployee;
 
 public class TotalDeductables {
 
@@ -11,7 +10,7 @@ public class TotalDeductables {
     private final int INSURANCE_INTERN = 750;
 
     public double calculateDeductable(Employee employee) {
-        if (employee instanceof PermanentEmployee) {
+        if (employee.isFullTimer()) {
             return INSURANCE_PERMANENT_EMPLOYEE +
                     (employee.getFixedPay() * INCOME_TAX) / 100 +
                     (employee.getFixedPay() * PF) / 100;
