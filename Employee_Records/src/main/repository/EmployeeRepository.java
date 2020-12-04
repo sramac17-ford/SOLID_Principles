@@ -18,8 +18,6 @@ public class EmployeeRepository {
 
         employeeList.add(new Intern("Rebecca", "Johnson", 45000));
         employeeList.add(new Intern("Michael", "Richards", 40000));
-
-        employeeList.add(new Contractor("Jerry", "Seinfeld", 40000));
     }
 
     public ArrayList<Employee> getEmployees() {
@@ -33,5 +31,4 @@ public class EmployeeRepository {
             throw new NullPointerException("Employee cannot be null");
         }
     }
-
 }

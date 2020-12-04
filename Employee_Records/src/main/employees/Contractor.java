@@ -1,14 +1,26 @@
 package main.employees;
 
-public class Contractor extends Employee {
+public class Contractor {
+
+    private final String firstName;
+    private final String lastName;
+    private final int fixedPay;
 
     public Contractor(String firstName, String lastName, int fixedPay) {
-        super(firstName, lastName, fixedPay);
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.fixedPay = fixedPay;
     }
 
-    @Override
-    public void applyForLeave(int days) throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Contract employees cannot apply leave");
+    public String getFirstName() {
+        return firstName;
     }
 
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getFixedPay() {
+        return fixedPay;
+    }
 }
