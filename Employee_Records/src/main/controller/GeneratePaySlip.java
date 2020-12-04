@@ -3,6 +3,8 @@ package main.controller;
 import main.deductibles.TotalDeductables;
 import main.employees.Employee;
 import main.reports.PaySlipGenerator;
+import main.reports.PDFReportGenerator;
+import main.reports.TextReportGenerator;
 import main.repository.EmployeeRepository;
 
 import java.time.Month;
@@ -17,7 +19,7 @@ public class GeneratePaySlip {
 
         for (Employee e : employeesList) {
             double netPay = e.getFixedPay() - new TotalDeductables().calculateDeductable(e);
-            PaySlipGenerator paySlipGenerator = new PaySlipGenerator(e.getFullName(), netPay, Month.JANUARY);
+            TextReportGenerator paySlipGenerator = new PaySlipGenerator(e.getFullName(), netPay, Month.JANUARY);
             System.out.println(paySlipGenerator.generateTextDocument());
         }
     }

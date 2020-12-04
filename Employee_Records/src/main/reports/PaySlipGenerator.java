@@ -2,7 +2,7 @@ package main.reports;
 
 import java.time.Month;
 
-public class PaySlipGenerator implements ReportGenerator {
+public class PaySlipGenerator implements TextReportGenerator {
 
     private final String employeeName;
     private final double netMonthlyPay;
@@ -12,11 +12,6 @@ public class PaySlipGenerator implements ReportGenerator {
         this.employeeName = fullName;
         this.netMonthlyPay = netPay;
         this.month = month;
-    }
-
-    @Override
-    public String generatePDF() {
-        return null;
     }
 
     @Override
@@ -32,10 +27,5 @@ public class PaySlipGenerator implements ReportGenerator {
         paySlipContent.append(System.lineSeparator());
 
         return paySlipContent.toString();
-    }
-
-    @Override
-    public String generateJsonFile() {
-        return null;
     }
 }

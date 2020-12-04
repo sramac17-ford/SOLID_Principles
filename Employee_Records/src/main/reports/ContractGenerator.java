@@ -2,7 +2,7 @@ package main.reports;
 
 import java.util.Arrays;
 
-public class ContractGenerator implements ReportGenerator {
+public class ContractGenerator implements TextReportGenerator, PDFReportGenerator, JsonReportGenerator {
 
     private String contractContent;
 
