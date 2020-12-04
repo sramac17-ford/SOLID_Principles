@@ -1,5 +1,6 @@
 package main.repository;
 
+import main.employees.Contractor;
 import main.employees.Employee;
 import main.employees.Intern;
 import main.employees.PermanentEmployee;
@@ -17,6 +18,8 @@ public class EmployeeRepository {
 
         employeeList.add(new Intern("Rebecca", "Johnson", 45000));
         employeeList.add(new Intern("Michael", "Richards", 40000));
+
+        employeeList.add(new Contractor("Jerry", "Seinfeld", 40000));
     }
 
     public ArrayList<Employee> getEmployees() {
