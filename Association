@@ -1,0 +1,15 @@
+**Inheritance**
+-->JAVA INHERITANCE is a mechanism in which one class acquires the property of another class.
+-->In Java, when an "Is-A" relationship exists between two classes, we use Inheritance.
+-->The parent class is called a super class and the inherited class is called a subclass.
+
+**Association**
+-->Association refers to the relationship between multiple objects.
+-->It refers to how objects are related to each other and how they are using each other's functionality.
+-->Composition and aggregation are two types of association.
+
+
+IS-A vs HAS-A
+
+IS-A --> In Java, an Is-A relationship depends on inheritance. Further inheritance is of two types, class inheritance and interface inheritance. It is used for code reusability in Java
+HAS-A --> In Java, a Has-A relationship is also known as composition. It is also used for code reusability in Java. In Java, a Has-A relationship simply means that an instance of one class has a reference to an instance of another class or an other instance of the same class
