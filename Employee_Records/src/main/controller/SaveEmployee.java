@@ -2,6 +2,7 @@ package main.controller;
 
 import main.employees.Employee;
 import main.employees.PermanentEmployee;
+import main.logger.ConsoleLogger;
 import main.repository.EmployeeRepository;
 
 public class SaveEmployee {
@@ -10,12 +11,11 @@ public class SaveEmployee {
         EmployeeRepository employeeRepository = new EmployeeRepository();
 
         Employee newEmployee = new PermanentEmployee("Jacob", "Elias", 125000);
-        employeeRepository.addEmployee(newEmployee);
-        newEmployee = new PermanentEmployee("Marin", "Rose", 90000);
-        employeeRepository.addEmployee(newEmployee);
-        newEmployee = new PermanentEmployee("Charlie", "Owen", 55000);
-        employeeRepository.addEmployee(newEmployee);
-        newEmployee = new PermanentEmployee("Amy", "Deck", 155000);
-        employeeRepository.addEmployee(newEmployee);
+        try {
+            employeeRepository.addEmployee(newEmployee);
+            ConsoleLogger.logMessage("Employee added to the database successfully");
+        } catch (NullPointerException exception) {
+            ConsoleLogger.logError("Exception occurred", exception);
+        }
     }
 }
